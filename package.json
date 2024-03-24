@@ -1,17 +1,14 @@
 {
   "name": "@txstate-mws/fastify-shared",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Types and other code shared between a fastify-txstate API and the UIs it communicates with.",
   "exports": {
-    "require": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    },
-    "import": {
-      "types": "./lib-esm/index.d.ts",
-      "default": "./lib-esm/index.js"
+    "." : {
+      "require": "./lib/index.js",
+      "import": "./lib-esm/index.js"
     }
   },
+  "types": "./lib/index.d.ts",
   "devDependencies": {
     "@types/node": "^20.11.30",
     "json-schema-to-typescript": "^13.1.2",

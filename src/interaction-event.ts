@@ -17,7 +17,8 @@ example, a react or svelte component that logs presses of a specific button
 might name the eventType after the component's name.
 
 It should be easily readable but also help us identify the line of code that
-generated the event.`
+generated the event.`,
+      example: 'ActionPanel.svelte'
     },
     screen: {
       type: 'string',
@@ -37,16 +38,20 @@ helpful to add that context to the string after a hash (#). This does not need
 to match the browser address bar.
 
 The key is to keep everything easily human readable, consistent over time, and
-make it easy to generate reports on how users are interacting with our pages/dialogs.`,
-      examples: ['/pages', '/pages/[id]', '/pages/[id]#dialog']
+make it easy to generate reports on how users are interacting with our pages/dialogs.
+
+Examples: '/pages', '/pages/[id]', '/pages/[id]#dialog'`,
+      example: '/pages/[id]#dialog'
     },
     action: {
       type: 'string',
       description:
 `The specific action the user took. Typically the label for the button that
 the user interacted with, but could also be other types of interactions like
-swipes. Human readable and easily grouped.`,
-      examples: ['Add Page', 'Edit Page', 'Preview', 'Cancel Preview', 'Download', 'Swipe Photo Preview']
+swipes. Human readable and easily grouped.
+
+Examples: 'Add Page', 'Edit Page', 'Preview', 'Cancel Preview', 'Download', 'Swipe Photo Preview'`,
+      example: 'Edit Page'
     },
     target: {
       type: 'string',
@@ -67,7 +72,7 @@ that you are accidently grouping in the asset or site or user with an id of 12.
 You can also include even more hierarchical context for ease of reporting. For instance,
 '/sites/5/pages/12' could be used instead of '/pages/12', which would allow a report to
 group across targets that begin with '/sites/5'.`,
-      examples: ['/sites/5/pages/12']
+      example: '/sites/5/pages/12'
     },
     additionalProperties: {
       type: 'object',
@@ -77,7 +82,7 @@ when the existing properties above are insufficient for a report that needs to b
 
 This is NOT a catch-all property. Everything added here expands the index in elasticsearch
 and has performance and disk usage implications.`,
-      examples: [{ secondaryTarget: '/pages/14' }],
+      example: { secondaryTarget: '/pages/14' },
       additionalProperties: { type: 'string' }
     }
   },
