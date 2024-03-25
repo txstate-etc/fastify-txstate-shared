@@ -1,6 +1,6 @@
 {
   "name": "@txstate-mws/fastify-shared",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Types and other code shared between a fastify-txstate API and the UIs it communicates with.",
   "exports": {
     "." : {
