@@ -14,7 +14,7 @@ export const validationMessage = {
 export const validatedResponse = {
   type: 'object',
   properties: {
-    success: { type: 'boolean' },
+    success: { type: 'boolean', example: false },
     messages: { type: 'array', items: validationMessage }
   },
   required: ['success', 'messages'],
