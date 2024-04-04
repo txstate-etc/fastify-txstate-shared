@@ -1,2 +1,2 @@
-export * from './interaction-event'
-export * from './validation'
+export * from './interaction-event.js'
+export * from './validation.js'
