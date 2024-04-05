@@ -20,3 +20,11 @@ export const validatedResponse = {
   required: ['success', 'messages'],
   additionalProperties: false
 } as const satisfies JSONSchema
+
+export const queryWithValidateFlag = {
+  type: 'object',
+  properties: {
+    validate: { type: 'integer', enum: [0, 1] }
+  },
+  additionalProperties: false
+} as const satisfies JSONSchema
