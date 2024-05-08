@@ -95,6 +95,7 @@ export namespace OpenAPIV3_1 {
     exclusiveMinimum?: boolean | number
     exclusiveMaximum?: boolean | number
     contentMediaType?: string
+    $id?: string // for references to target
     $schema?: string
     additionalProperties?: boolean | ReferenceObject | SchemaObject
     properties?: {
