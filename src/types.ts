@@ -58,9 +58,40 @@ export namespace OpenAPIV3_1 {
     writeOnly?: boolean
     example?: any
     deprecated?: boolean
-    errorMessage?: string
+    errorMessage?: string | {
+      /** default message */
+      _?: string | Record<string, string>
+      required?: string | Record<string, string>
+      dependentRequired?: string
+      dependencies?: string | Record<string, string>
+      maxProperties?: string
+      minProperties?: string
+      type?: string
+      enum?: string
+      minimum?: string
+      exclusiveMinimum?: string
+      maximum?: string
+      exclusiveMaximum?: string
+      multipleOf?: string
+      minLength?: string
+      maxLength?: string
+      pattern?: string
+      const?: string
+      minItems?: string
+      maxItems?: string
+      uniqueItems?: string
+      minContains?: string
+      maxContains?: string
 
-    examples?: BaseSchemaObject['example'][]
+      format?: string
+      formatMaximum?: string
+      formatMinimum?: string
+      formatExclusiveMaximum?: string
+      formatExclusiveMinimum?: string
+      [keys: string]: string | Record<string, string> | undefined
+    }
+
+    // examples?: BaseSchemaObject['example'][] // won't work with swagger-ui yet
     exclusiveMinimum?: boolean | number
     exclusiveMaximum?: boolean | number
     contentMediaType?: string
