@@ -52,7 +52,7 @@ export namespace OpenAPIV3_1 {
     maxProperties?: number
     minProperties?: number
     required?: string[]
-    enum?: any[]
+    enum?: any[] | readonly any[]
 
     readOnly?: boolean
     writeOnly?: boolean
