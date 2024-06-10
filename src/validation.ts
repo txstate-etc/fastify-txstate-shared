@@ -5,10 +5,28 @@ export const validationMessage = {
   properties: {
     type: { type: 'string', enum: ['error', 'warning', 'success', 'system', 'info'], example: 'error' },
     message: { type: 'string', example: 'must be an integer' },
-    path: { type: 'string', example: 'cart.item.0.quantity', description: 'Dot-separated path to the field in the request body that caused the validation error.' }
+    path: { type: 'string', example: 'cart.item.0.quantity', description: 'Dot-separated path to the field in the request body that caused the validation error.' },
+    extra: { type: 'object' }
   },
   required: ['type', 'message'],
   additionalProperties: false
+} as const satisfies JSONSchema
+
+export const userLookupValidationMessage = {
+  ...validationMessage,
+  properties: {
+    ...validationMessage.properties,
+    extra: {
+      type: 'object',
+      properties: {
+        login: { type: 'string', example: 'user01' },
+        fullname: { type: 'string', example: 'John Smith' },
+        title: { type: 'string', example: 'Software Developer II' },
+        org: { type: 'string', example: 'Mobile/Web Systems' }
+      },
+      required: ['login', 'fullname']
+    }
+  }
 } as const satisfies JSONSchema
 
 export const validatedResponse = {
