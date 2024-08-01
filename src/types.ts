@@ -57,6 +57,7 @@ export namespace OpenAPIV3_1 {
     readOnly?: boolean
     writeOnly?: boolean
     example?: any
+    allowReserved?: boolean
     deprecated?: boolean
     errorMessage?: string | {
       /** default message */
