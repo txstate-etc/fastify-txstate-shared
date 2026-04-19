@@ -11,14 +11,14 @@
   },
   "types": "./lib-esm/index.d.ts",
   "devDependencies": {
-    "@types/node": "^20.11.30",
+    "@types/node": "^24.0.0",
     "json-schema-to-typescript": "^13.1.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.4.3"
+    "typescript": "^6.0.3"
   },
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "rm -rf lib lib-esm && tsc && tsc -m es2022 --outDir lib-esm --moduleResolution node && tsx build.mts && cp package-esm.json lib-esm/package.json"
+    "build": "rm -rf lib lib-esm && tsc && tsc -p tsconfig.esm.json && tsx build.mts && cp package-esm.json lib-esm/package.json"
   },
   "files": [
     "lib/**/*",
